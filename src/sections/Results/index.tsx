@@ -14,7 +14,7 @@ function StatItem({ value, suffix, label, description, started }: typeof stats[0
 
   return (
     <div className="flex flex-col items-center text-center p-6 sm:p-10">
-      <div className="font-display text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl text-white">
+      <div className="font-display text-4xl font-bold tracking-tighter sm:text-5xl lg:text-6xl text-white">
         {count}<span>{suffix}</span>
       </div>
       <p className="mt-3 text-sm font-semibold text-white/80 sm:text-base">{label}</p>
@@ -48,7 +48,7 @@ export default function Results() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl"
+            className="font-display text-3xl font-bold tracking-tighter text-white sm:text-4xl [text-wrap:balance]"
           >
             Цифры, которые говорят сами за себя
           </motion.h2>

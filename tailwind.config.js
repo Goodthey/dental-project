@@ -27,8 +27,8 @@ export default {
         success: '#15803D',
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+        sans: ['Outfit', 'system-ui', 'sans-serif'],
+        display: ['Plus Jakarta Sans', 'Outfit', 'sans-serif'],
       },
       backgroundImage: {
         'gradient-accent': 'linear-gradient(135deg, #1A4480 0%, #2D6FA3 100%)',
@@ -61,8 +61,9 @@ export default {
       boxShadow: {
         'glow-accent': '0 4px 20px rgba(26,68,128,0.18)',
         'glow-violet': '0 4px 20px rgba(45,111,163,0.15)',
-        'card': '0 1px 3px rgba(12,27,46,0.06), 0 8px 24px rgba(12,27,46,0.08)',
-        'card-hover': '0 4px 8px rgba(12,27,46,0.06), 0 16px 40px rgba(12,27,46,0.12), 0 0 0 1px rgba(26,68,128,0.14)',
+        'card': '0 1px 2px rgba(26,68,128,0.04), 0 8px 28px rgba(26,68,128,0.07)',
+        'card-hover': '0 4px 8px rgba(26,68,128,0.06), 0 20px 48px rgba(26,68,128,0.11), 0 0 0 1px rgba(26,68,128,0.12)',
+        'sm': '0 1px 3px rgba(26,68,128,0.06), 0 2px 8px rgba(26,68,128,0.04)',
       },
     },
   },

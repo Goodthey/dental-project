@@ -24,7 +24,7 @@ export default function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="font-display text-3xl font-extrabold tracking-tight text-text-primary sm:text-4xl"
+            className="font-display text-3xl font-bold tracking-tighter text-text-primary sm:text-4xl [text-wrap:balance]"
           >
             Всё для роста вашей клиники
           </motion.h2>

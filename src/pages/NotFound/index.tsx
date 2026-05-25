@@ -9,7 +9,7 @@ export default function NotFound() {
       <Helmet><title>404 — DentalAgency</title></Helmet>
 
       <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_50%,rgba(91,110,247,0.08),transparent)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_50%,rgba(26,68,128,0.04),transparent)]" />
         <div className="absolute inset-0 bg-grid-pattern bg-grid opacity-40" style={{ backgroundSize: '48px 48px' }} />
 
         <div className="container-custom relative z-10 flex flex-col items-center text-center">
@@ -48,7 +48,7 @@ export default function NotFound() {
           >
             <Link
               to="/"
-              className="inline-flex items-center gap-2 rounded-xl bg-accent px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-accent-hover hover:shadow-glow-accent"
+              className="inline-flex items-center gap-2 rounded-xl bg-accent px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-accent-hover hover:shadow-glow-accent active:scale-[0.98]"
             >
               <ArrowLeft size={15} />
               На главную

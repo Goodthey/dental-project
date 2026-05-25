@@ -23,7 +23,7 @@ export default function CaseDetail() {
 
       {/* Hero */}
       <section className="relative overflow-hidden pt-32 pb-16">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(91,110,247,0.1),transparent)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(26,68,128,0.06),transparent)]" />
         <div className="absolute inset-0 bg-grid-pattern bg-grid opacity-50" style={{ backgroundSize: '48px 48px' }} />
         <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-bg to-transparent" />
 
@@ -55,7 +55,7 @@ export default function CaseDetail() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.1 }}
-            className="font-display text-4xl font-extrabold tracking-tight text-text-primary sm:text-5xl"
+            className="font-display text-4xl font-bold tracking-tighter text-text-primary sm:text-5xl"
           >
             {item.title}
           </motion.h1>
@@ -168,7 +168,7 @@ export default function CaseDetail() {
             </p>
             <Link
               to="/contacts"
-              className="inline-flex items-center gap-2 rounded-xl bg-accent px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-accent-hover hover:shadow-glow-accent"
+              className="inline-flex items-center gap-2 rounded-xl bg-accent px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-accent-hover hover:shadow-glow-accent active:scale-[0.98]"
             >
               Получить аудит бесплатно
               <ArrowRight size={15} />

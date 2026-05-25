@@ -47,7 +47,7 @@ export default function LeadMagnet() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.55, delay: 0.1 }}
-              className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl"
+              className="font-display text-3xl font-bold tracking-tighter text-white sm:text-4xl [text-wrap:balance]"
             >
               Получите бесплатный аудит за 24 часа
             </motion.h2>
@@ -110,7 +110,7 @@ export default function LeadMagnet() {
                   />
                   <button
                     type="submit"
-                    className="group mt-2 flex w-full items-center justify-center gap-2 rounded-lg bg-accent py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-accent-hover hover:shadow-glow-accent"
+                    className="group mt-2 flex w-full items-center justify-center gap-2 rounded-lg bg-accent py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-accent-hover hover:shadow-glow-accent active:scale-[0.98]"
                   >
                     Получить аудит бесплатно
                     <ArrowRight size={16} className="transition-transform duration-200 group-hover:translate-x-1" />

@@ -67,7 +67,7 @@ export default function Hero() {
             <motion.div {...fadeUp(0.3)} className="mt-10 flex flex-wrap items-center gap-4">
               <Link
                 to="/contacts"
-                className="group inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-accent-hover hover:shadow-glow-accent"
+                className="group inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-accent-hover hover:shadow-glow-accent active:scale-[0.98]"
               >
                 Получить бесплатный аудит
                 <ArrowRight size={16} className="transition-transform duration-200 group-hover:translate-x-1" />

@@ -114,7 +114,7 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="font-display text-3xl font-extrabold tracking-tight text-text-primary"
+              className="font-display text-3xl font-bold tracking-tighter text-text-primary"
             >
               Как мы работаем
             </motion.h2>
@@ -159,7 +159,7 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="font-display text-3xl font-extrabold tracking-tight text-text-primary"
+              className="font-display text-3xl font-bold tracking-tighter text-text-primary"
             >
               Люди за результатом
             </motion.h2>
@@ -194,7 +194,7 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="font-display text-3xl font-extrabold tracking-tight text-text-primary"
+            className="font-display text-3xl font-bold tracking-tighter text-text-primary"
           >
             Готовы познакомиться?
           </motion.h2>
@@ -216,7 +216,7 @@ export default function About() {
           >
             <Link
               to="/contacts"
-              className="group inline-flex items-center gap-2 rounded-xl bg-accent px-6 py-3.5 text-sm font-semibold text-white transition-all hover:bg-accent-hover hover:shadow-glow-accent"
+              className="group inline-flex items-center gap-2 rounded-xl bg-accent px-6 py-3.5 text-sm font-semibold text-white transition-all hover:bg-accent-hover hover:shadow-glow-accent active:scale-[0.98]"
             >
               Написать нам
               <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />

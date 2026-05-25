@@ -146,7 +146,7 @@ export default function Contacts() {
 
                       <button
                         type="submit"
-                        className="group mt-2 flex w-full items-center justify-center gap-2 rounded-lg bg-accent py-3.5 text-sm font-semibold text-white transition-all hover:bg-accent-hover hover:shadow-glow-accent"
+                        className="group mt-2 flex w-full items-center justify-center gap-2 rounded-lg bg-accent py-3.5 text-sm font-semibold text-white transition-all hover:bg-accent-hover hover:shadow-glow-accent active:scale-[0.98]"
                       >
                         Отправить заявку
                         <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
