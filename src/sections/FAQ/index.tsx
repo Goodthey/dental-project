@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Plus } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { cn } from '@/lib/utils'
 
 const faqs = [
@@ -34,77 +35,107 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(null)
 
   return (
-    <section className="section-padding bg-bg-surface">
-      <div className="container-custom max-w-3xl">
+    <section className="section-padding bg-bg">
+      <div className="container-custom">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-16">
 
-        <div className="flex flex-col items-center text-center mb-12">
-          <motion.span
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-xs font-semibold uppercase tracking-widest text-accent mb-4"
-          >
-            FAQ
-          </motion.span>
-          <motion.h2
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="font-display text-3xl font-extrabold tracking-tight text-text-primary sm:text-4xl"
-          >
-            Частые вопросы
-          </motion.h2>
-        </div>
-
-        <div className="flex flex-col gap-2">
-          {faqs.map((faq, i) => (
-            <motion.div
-              key={i}
+          {/* Left — sticky header */}
+          <div className="lg:sticky lg:top-32 lg:self-start">
+            <motion.span
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.06 }}
-              className="rounded-2xl border border-white/[0.07] bg-bg overflow-hidden"
+              transition={{ duration: 0.5 }}
+              className="text-xs font-semibold uppercase tracking-widest text-accent mb-4 block"
             >
-              <button
-                onClick={() => setOpen(open === i ? null : i)}
-                className="flex w-full items-center justify-between gap-4 px-6 py-4 text-left"
+              FAQ
+            </motion.span>
+            <motion.h2
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="font-display text-3xl font-bold tracking-tight text-text-primary sm:text-4xl"
+            >
+              Частые вопросы
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.15 }}
+              className="mt-4 text-sm text-text-secondary leading-relaxed"
+            >
+              Не нашли ответ? Напишите нам — разберём вашу ситуацию индивидуально.
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="mt-6"
+            >
+              <Link
+                to="/contacts"
+                className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:text-accent-hover transition-colors"
               >
-                <span className={cn(
-                  'text-sm font-medium transition-colors duration-200',
-                  open === i ? 'text-text-primary' : 'text-text-secondary'
-                )}>
-                  {faq.q}
-                </span>
-                <Plus
-                  size={18}
-                  className={cn(
-                    'shrink-0 text-text-muted transition-transform duration-300',
-                    open === i && 'rotate-45 text-accent'
-                  )}
-                />
-              </button>
-
-              <AnimatePresence initial={false}>
-                {open === i && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
-                  >
-                    <p className="px-6 pb-5 text-sm text-text-secondary leading-relaxed">
-                      {faq.a}
-                    </p>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+                Задать вопрос →
+              </Link>
             </motion.div>
-          ))}
-        </div>
+          </div>
 
+          {/* Right — accordion */}
+          <div className="lg:col-span-2 flex flex-col gap-2">
+            {faqs.map((faq, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.05 }}
+                className="rounded-xl border border-border bg-white overflow-hidden shadow-sm"
+              >
+                <button
+                  onClick={() => setOpen(open === i ? null : i)}
+                  className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left hover:bg-bg-surface transition-colors duration-150"
+                >
+                  <span className={cn(
+                    'text-sm font-medium transition-colors duration-200',
+                    open === i ? 'text-accent' : 'text-text-primary'
+                  )}>
+                    {faq.q}
+                  </span>
+                  <div className={cn(
+                    'flex h-6 w-6 shrink-0 items-center justify-center rounded-full border transition-all duration-300',
+                    open === i
+                      ? 'border-accent bg-accent text-white rotate-45'
+                      : 'border-border bg-bg-surface text-text-muted'
+                  )}>
+                    <Plus size={14} />
+                  </div>
+                </button>
+
+                <AnimatePresence initial={false}>
+                  {open === i && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <div className="px-5 pb-4 border-t border-border">
+                        <p className="pt-3 text-sm text-text-secondary leading-relaxed">
+                          {faq.a}
+                        </p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            ))}
+          </div>
+
+        </div>
       </div>
     </section>
   )

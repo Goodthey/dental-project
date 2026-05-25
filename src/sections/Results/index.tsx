@@ -13,13 +13,12 @@ function StatItem({ value, suffix, label, description, started }: typeof stats[0
   const count = useCounter(value, 2000, started)
 
   return (
-    <div className="flex flex-col items-center text-center p-5 sm:p-8">
-      <div className="font-display text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
-        <span className="gradient-text">{count}</span>
-        <span className="gradient-text">{suffix}</span>
+    <div className="flex flex-col items-center text-center p-6 sm:p-10">
+      <div className="font-display text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl text-white">
+        {count}<span>{suffix}</span>
       </div>
-      <p className="mt-2 text-sm font-semibold text-text-primary sm:mt-3 sm:text-base">{label}</p>
-      <p className="mt-1 text-xs text-text-muted sm:text-sm">{description}</p>
+      <p className="mt-3 text-sm font-semibold text-white/80 sm:text-base">{label}</p>
+      <p className="mt-1 text-xs text-white/50 sm:text-sm">{description}</p>
     </div>
   )
 }
@@ -28,9 +27,10 @@ export default function Results() {
   const { ref, inView } = useInView(0.3)
 
   return (
-    <section className="relative overflow-hidden section-padding bg-bg-surface" ref={ref}>
-      {/* Glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_50%,rgba(91,110,247,0.08),transparent)]" />
+    <section className="relative overflow-hidden section-padding bg-accent" ref={ref}>
+      {/* Subtle pattern overlay */}
+      <div className="absolute inset-0 bg-grid-pattern bg-grid opacity-20" style={{ backgroundSize: '48px 48px' }} />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_50%,rgba(255,255,255,0.04),transparent)]" />
 
       <div className="container-custom relative z-10">
         <div className="flex flex-col items-center text-center mb-12">
@@ -39,29 +39,27 @@ export default function Results() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-xs font-semibold uppercase tracking-widest text-accent mb-4"
+            className="text-xs font-semibold uppercase tracking-widest text-white/60 mb-4"
           >
             Результаты
           </motion.span>
-
           <motion.h2
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="font-display text-3xl font-extrabold tracking-tight text-text-primary sm:text-4xl"
+            className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl"
           >
             Цифры, которые говорят сами за себя
           </motion.h2>
         </div>
 
-        {/* Stats grid */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.15 }}
-          className="grid grid-cols-2 divide-x divide-y divide-white/[0.06] rounded-2xl border border-white/[0.06] lg:grid-cols-4 lg:divide-y-0"
+          className="grid grid-cols-2 divide-x divide-y divide-white/10 rounded-2xl border border-white/10 lg:grid-cols-4 lg:divide-y-0 overflow-hidden"
         >
           {stats.map((stat, i) => (
             <StatItem key={i} {...stat} started={inView} />

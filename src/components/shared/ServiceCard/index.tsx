@@ -28,7 +28,7 @@ export default function ServiceCard({ service, index = 0 }: Props) {
     >
       <Link
         to={`/services/${service.slug}`}
-        className="group relative flex h-full flex-col rounded-2xl border border-white/[0.07] bg-bg-surface p-6 transition-all duration-300 hover:border-accent/20 hover:bg-bg-elevated hover:shadow-card-hover"
+        className="group relative flex h-full flex-col rounded-2xl border border-border bg-white p-6 transition-all duration-300 hover:border-accent/25 hover:shadow-card-hover"
       >
         {/* Icon */}
         <div
@@ -49,7 +49,7 @@ export default function ServiceCard({ service, index = 0 }: Props) {
         </p>
 
         {/* Result */}
-        <div className="mt-4 pt-4 border-t border-white/[0.06] flex items-center justify-between">
+        <div className="mt-4 pt-4 border-t border-border flex items-center justify-between">
           <span className="text-xs text-text-muted">{service.result}</span>
           <ArrowUpRight
             size={15}

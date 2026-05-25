@@ -82,7 +82,7 @@ export default function Contacts() {
               transition={{ duration: 0.55 }}
               className="lg:col-span-3"
             >
-              <div className="rounded-3xl border border-white/[0.07] bg-bg-surface p-8">
+              <div className="rounded-2xl border border-border bg-white p-8 shadow-card">
                 {!sent ? (
                   <>
                     <h2 className="font-display text-xl font-bold text-text-primary mb-6">
@@ -99,7 +99,7 @@ export default function Contacts() {
                             value={form.name}
                             onChange={(e) => setForm({ ...form, name: e.target.value })}
                             required
-                            className="rounded-xl border border-white/[0.08] bg-bg px-4 py-3 text-sm text-text-primary placeholder:text-text-muted outline-none transition-colors focus:border-accent/40 focus:ring-1 focus:ring-accent/20"
+                            className="rounded-lg border border-border bg-bg px-4 py-3 text-sm text-text-primary placeholder:text-text-muted outline-none transition-colors focus:border-accent/50 focus:ring-2 focus:ring-accent/10"
                           />
                         </div>
                         <div className="flex flex-col gap-1.5">
@@ -119,7 +119,7 @@ export default function Contacts() {
                           placeholder="Smile Clinic"
                           value={form.clinic}
                           onChange={(e) => setForm({ ...form, clinic: e.target.value })}
-                          className="rounded-xl border border-white/[0.08] bg-bg px-4 py-3 text-sm text-text-primary placeholder:text-text-muted outline-none transition-colors focus:border-accent/40 focus:ring-1 focus:ring-accent/20"
+                          className="rounded-lg border border-border bg-bg px-4 py-3 text-sm text-text-primary placeholder:text-text-muted outline-none transition-colors focus:border-accent/50 focus:ring-2 focus:ring-accent/10"
                         />
                       </div>
 
@@ -140,13 +140,13 @@ export default function Contacts() {
                           value={form.message}
                           onChange={(e) => setForm({ ...form, message: e.target.value })}
                           rows={4}
-                          className="rounded-xl border border-white/[0.08] bg-bg px-4 py-3 text-sm text-text-primary placeholder:text-text-muted outline-none transition-colors focus:border-accent/40 focus:ring-1 focus:ring-accent/20 resize-none"
+                          className="rounded-lg border border-border bg-bg px-4 py-3 text-sm text-text-primary placeholder:text-text-muted outline-none transition-colors focus:border-accent/50 focus:ring-2 focus:ring-accent/10 resize-none"
                         />
                       </div>
 
                       <button
                         type="submit"
-                        className="group mt-2 flex w-full items-center justify-center gap-2 rounded-xl bg-accent py-3.5 text-sm font-semibold text-white transition-all hover:bg-accent-hover hover:shadow-glow-accent"
+                        className="group mt-2 flex w-full items-center justify-center gap-2 rounded-lg bg-accent py-3.5 text-sm font-semibold text-white transition-all hover:bg-accent-hover hover:shadow-glow-accent"
                       >
                         Отправить заявку
                         <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
@@ -190,7 +190,7 @@ export default function Contacts() {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center gap-4 rounded-2xl border border-white/[0.07] bg-bg-surface p-5 transition-all hover:border-accent/20 hover:bg-bg-elevated"
+                  className="group flex items-center gap-4 rounded-2xl border border-border bg-white p-5 shadow-sm transition-all hover:border-accent/25 hover:shadow-card"
                 >
                   <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent/10">
                     <Icon size={18} className="text-accent" />
@@ -215,7 +215,7 @@ export default function Contacts() {
               </div>
 
               {/* Working hours */}
-              <div className="rounded-2xl border border-white/[0.07] bg-bg-surface p-5">
+              <div className="rounded-2xl border border-border bg-white p-5 shadow-sm">
                 <p className="text-xs font-semibold uppercase tracking-wider text-text-muted mb-3">
                   Режим работы
                 </p>

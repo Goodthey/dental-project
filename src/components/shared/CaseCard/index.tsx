@@ -18,7 +18,7 @@ export default function CaseCard({ caseItem, index = 0 }: Props) {
     >
       <Link
         to={`/cases/${caseItem.slug}`}
-        className="group flex h-full flex-col rounded-2xl border border-white/[0.07] bg-bg-surface overflow-hidden transition-all duration-300 hover:border-white/[0.14] hover:shadow-card-hover"
+        className="group flex h-full flex-col rounded-2xl border border-border bg-white overflow-hidden transition-all duration-300 hover:border-accent/20 hover:shadow-card-hover"
       >
         {/* Top color bar */}
         <div className="h-1 w-full bg-gradient-accent" />
@@ -46,7 +46,7 @@ export default function CaseCard({ caseItem, index = 0 }: Props) {
           </p>
 
           {/* Results */}
-          <div className="mt-5 pt-5 border-t border-white/[0.06] grid grid-cols-2 gap-3">
+          <div className="mt-5 pt-5 border-t border-border grid grid-cols-2 gap-3">
             {caseItem.results.slice(0, 4).map((result) => (
               <div key={result.label}>
                 <p className="text-base font-bold text-text-primary leading-none">

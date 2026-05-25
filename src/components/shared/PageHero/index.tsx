@@ -10,7 +10,7 @@ interface Props {
 export default function PageHero({ label, title, titleAccent, description }: Props) {
   return (
     <section className="relative overflow-hidden pt-32 pb-16">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(91,110,247,0.1),transparent)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(26,68,128,0.06),transparent)]" />
       <div className="absolute inset-0 bg-grid-pattern bg-grid opacity-50" style={{ backgroundSize: '48px 48px' }} />
       <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-bg to-transparent" />
 

@@ -9,7 +9,7 @@ const navLinks = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/[0.06]">
+    <footer className="border-t border-border bg-white">
       <div className="container-custom py-6">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
 

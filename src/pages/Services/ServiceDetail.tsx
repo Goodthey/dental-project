@@ -295,7 +295,7 @@ export default function ServiceDetail() {
                 Похожие услуги
               </h2>
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                {related.map((s, i) => (
+                {related.map((s) => (
                   <Link
                     key={s.id}
                     to={`/services/${s.slug}`}

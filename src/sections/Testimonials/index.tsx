@@ -4,7 +4,7 @@ import { testimonials } from '@/data/testimonials'
 
 export default function Testimonials() {
   return (
-    <section className="section-padding bg-bg">
+    <section className="section-padding bg-bg-surface">
       <div className="container-custom">
 
         <div className="flex flex-col items-center text-center mb-12">
@@ -22,7 +22,7 @@ export default function Testimonials() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="font-display text-3xl font-extrabold tracking-tight text-text-primary sm:text-4xl"
+            className="font-display text-3xl font-bold tracking-tight text-text-primary sm:text-4xl"
           >
             Что говорят владельцы клиник
           </motion.h2>
@@ -35,11 +35,14 @@ export default function Testimonials() {
               initial={{ opacity: 0, y: 28 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.55, delay: i * 0.1, ease: [0.21, 0.47, 0.32, 0.98] }}
-              className="flex flex-col rounded-2xl border border-white/[0.07] bg-bg-surface p-6"
+              transition={{ duration: 0.55, delay: i * 0.1 }}
+              className="flex flex-col rounded-2xl border border-border bg-white p-6 shadow-card"
             >
+              {/* Accent top line */}
+              <div className="h-0.5 w-8 rounded-full bg-accent mb-5" />
+
               {/* Quote icon */}
-              <Quote size={20} className="text-accent/40 mb-4" />
+              <Quote size={18} className="text-accent/30 mb-3" />
 
               {/* Text */}
               <p className="text-sm text-text-secondary leading-relaxed flex-1">
@@ -47,13 +50,13 @@ export default function Testimonials() {
               </p>
 
               {/* Result badge */}
-              <div className="mt-4 inline-flex self-start rounded-full bg-success/10 px-3 py-1">
+              <div className="mt-4 inline-flex self-start rounded-md border border-success/20 bg-success/8 px-3 py-1">
                 <span className="text-xs font-semibold text-success">{t.result}</span>
               </div>
 
               {/* Author */}
-              <div className="mt-5 pt-5 border-t border-white/[0.06] flex items-center gap-3">
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gradient-accent text-xs font-bold text-white">
+              <div className="mt-5 pt-5 border-t border-border flex items-center gap-3">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-accent text-xs font-bold text-white">
                   {t.name.charAt(0)}
                 </div>
                 <div>

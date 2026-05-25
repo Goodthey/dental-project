@@ -17,64 +17,91 @@ export default function LeadMagnet() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     if (!form.name || !form.phone) return
-    // TODO: подключить реальную отправку
     setSent(true)
   }
 
   return (
-    <section className="relative section-padding overflow-hidden bg-bg">
-      {/* Background glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_50%,rgba(91,110,247,0.1),transparent)]" />
-      <div className="absolute inset-0 bg-grid-pattern bg-grid opacity-50" style={{ backgroundSize: '48px 48px' }} />
+    <section className="relative overflow-hidden bg-accent">
+      {/* Pattern */}
+      <div className="absolute inset-0 bg-grid-pattern bg-grid opacity-15" style={{ backgroundSize: '48px 48px' }} />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_80%_at_80%_50%,rgba(45,111,163,0.4),transparent)]" />
 
-      <div className="container-custom relative z-10">
-        <div className="mx-auto max-w-2xl">
+      <div className="container-custom relative z-10 py-20 sm:py-28">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20 items-center">
 
+          {/* Left — pitch */}
+          <div>
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 mb-6"
+            >
+              <span className="h-1.5 w-1.5 rounded-full bg-white animate-pulse-slow" />
+              <span className="text-xs font-semibold text-white">Берём не более 3 клиник в месяц</span>
+            </motion.div>
+
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.55, delay: 0.1 }}
+              className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl"
+            >
+              Получите бесплатный аудит за 24 часа
+            </motion.h2>
+
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="mt-4 text-base text-white/70"
+            >
+              Разберём ваш маркетинг и покажем, где вы теряете пациентов прямо сейчас.
+            </motion.p>
+
+            <motion.ul
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.25 }}
+              className="mt-8 flex flex-col gap-3"
+            >
+              {perks.map((p) => (
+                <li key={p} className="flex items-center gap-3 text-sm text-white/80">
+                  <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white/15">
+                    <CheckCircle2 size={12} className="text-white" />
+                  </div>
+                  {p}
+                </li>
+              ))}
+            </motion.ul>
+          </div>
+
+          {/* Right — form card */}
           <motion.div
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] }}
-            className="rounded-3xl border border-accent/20 bg-bg-surface p-8 shadow-glow-accent sm:p-12"
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="rounded-2xl bg-white p-8 shadow-card sm:p-10"
           >
             {!sent ? (
               <>
-                {/* Scarcity */}
-                <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5">
-                  <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse-slow" />
-                  <span className="text-xs font-semibold text-accent">
-                    Берём не более 3 новых клиник в месяц
-                  </span>
-                </div>
+                <h3 className="font-display text-xl font-bold text-text-primary mb-6">
+                  Оставить заявку
+                </h3>
 
-                <h2 className="font-display text-2xl font-extrabold tracking-tight text-text-primary sm:text-3xl">
-                  Получите бесплатный аудит{' '}
-                  <span className="gradient-text-blue">за 24 часа</span>
-                </h2>
-
-                <p className="mt-3 text-sm text-text-secondary">
-                  Разберём ваш маркетинг и покажем, где вы теряете пациентов прямо сейчас.
-                </p>
-
-                {/* Perks */}
-                <ul className="mt-6 flex flex-col gap-2.5">
-                  {perks.map((p) => (
-                    <li key={p} className="flex items-center gap-2.5 text-sm text-text-secondary">
-                      <CheckCircle2 size={15} className="shrink-0 text-accent" />
-                      {p}
-                    </li>
-                  ))}
-                </ul>
-
-                {/* Form */}
-                <form onSubmit={handleSubmit} className="mt-8 flex flex-col gap-3">
+                <form onSubmit={handleSubmit} className="flex flex-col gap-3">
                   <input
                     type="text"
                     placeholder="Ваше имя"
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
                     required
-                    className="w-full rounded-xl border border-white/[0.08] bg-bg px-4 py-3 text-sm text-text-primary placeholder:text-text-muted outline-none transition-colors focus:border-accent/40 focus:ring-1 focus:ring-accent/20"
+                    className="w-full rounded-lg border border-border bg-bg px-4 py-3 text-sm text-text-primary placeholder:text-text-muted outline-none transition-colors focus:border-accent/50 focus:ring-2 focus:ring-accent/10"
                   />
                   <PhoneInput
                     value={form.phone}
@@ -83,7 +110,7 @@ export default function LeadMagnet() {
                   />
                   <button
                     type="submit"
-                    className="group mt-1 flex w-full items-center justify-center gap-2 rounded-xl bg-accent py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-accent-hover hover:shadow-glow-accent"
+                    className="group mt-2 flex w-full items-center justify-center gap-2 rounded-lg bg-accent py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-accent-hover hover:shadow-glow-accent"
                   >
                     Получить аудит бесплатно
                     <ArrowRight size={16} className="transition-transform duration-200 group-hover:translate-x-1" />

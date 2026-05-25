@@ -25,7 +25,7 @@ export default function Header() {
       className={cn(
         'fixed inset-x-0 top-0 z-50 transition-all duration-300',
         scrolled
-          ? 'bg-bg/80 backdrop-blur-xl border-b border-white/[0.06]'
+          ? 'bg-white/90 backdrop-blur-xl border-b border-border shadow-sm'
           : 'bg-transparent'
       )}
     >
@@ -63,7 +63,7 @@ export default function Header() {
           <div className="hidden items-center gap-3 md:flex">
             <Link
               to="/contacts"
-              className="rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white transition-all duration-200 hover:bg-accent-hover hover:shadow-glow-accent"
+              className="rounded-md bg-accent px-4 py-2 text-sm font-medium text-white transition-all duration-200 hover:bg-accent-hover hover:shadow-glow-accent"
             >
               Получить аудит
             </Link>
@@ -82,7 +82,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="border-t border-white/[0.06] bg-bg/95 backdrop-blur-xl md:hidden">
+        <div className="border-t border-border bg-white/95 backdrop-blur-xl md:hidden shadow-md">
           <div className="container-custom py-4 flex flex-col gap-4">
             {navLinks.map((link) => (
               <NavLink

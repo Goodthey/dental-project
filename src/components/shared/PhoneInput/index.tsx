@@ -58,7 +58,7 @@ export default function PhoneInput({ value, onChange, className, required }: Pro
       required={required}
       maxLength={18}
       className={cn(
-        'w-full rounded-xl border border-white/[0.08] bg-bg px-4 py-3 text-sm text-text-primary placeholder:text-text-muted outline-none transition-colors focus:border-accent/40 focus:ring-1 focus:ring-accent/20',
+        'w-full rounded-lg border border-border bg-bg px-4 py-3 text-sm text-text-primary placeholder:text-text-muted outline-none transition-colors focus:border-accent/50 focus:ring-2 focus:ring-accent/10',
         className
       )}
     />

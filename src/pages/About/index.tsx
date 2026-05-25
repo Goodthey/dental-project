@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
 import { ArrowRight, Target, Eye, Heart, Zap } from 'lucide-react'
 import PageHero from '@/components/shared/PageHero'
-import LeadMagnet from '@/sections/LeadMagnet'
 
 const values = [
   {
@@ -79,7 +78,7 @@ export default function About() {
       {/* Stats */}
       <section className="py-16 bg-bg-surface">
         <div className="container-custom">
-          <div className="grid grid-cols-2 gap-px bg-white/[0.06] rounded-2xl overflow-hidden sm:grid-cols-4">
+          <div className="grid grid-cols-2 gap-px bg-border rounded-2xl overflow-hidden sm:grid-cols-4">
             {stats.map((s, i) => (
               <motion.div
                 key={s.label}
@@ -129,7 +128,7 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="rounded-2xl border border-white/[0.07] bg-bg-surface p-6"
+                className="rounded-2xl border border-border bg-white p-6 shadow-sm"
               >
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10">
                   <Icon size={18} className="text-accent" />
@@ -174,7 +173,7 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="flex flex-col items-center text-center rounded-2xl border border-white/[0.07] bg-bg p-6"
+                className="flex flex-col items-center text-center rounded-2xl border border-border bg-white p-6 shadow-sm"
               >
                 <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-accent text-lg font-bold text-white">
                   {initials}

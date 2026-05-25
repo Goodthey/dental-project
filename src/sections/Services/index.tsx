@@ -51,7 +51,7 @@ export default function Services() {
         >
           <Link
             to="/services"
-            className="group inline-flex items-center gap-2 rounded-xl border border-white/10 px-6 py-3 text-sm font-medium text-text-secondary transition-all duration-200 hover:border-white/20 hover:text-text-primary"
+            className="group inline-flex items-center gap-2 rounded-lg border border-border px-6 py-3 text-sm font-medium text-text-secondary transition-all duration-200 hover:border-accent/30 hover:text-text-primary"
           >
             Все услуги подробно
             <ArrowRight size={15} className="transition-transform duration-200 group-hover:translate-x-1" />

@@ -18,8 +18,8 @@
   }
 
   body {
-    background-color: #09090E;
-    color: #F4F4F8;
+    background-color: #F7F9FC;
+    color: #0C1B2E;
     font-family: 'Inter', system-ui, sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
@@ -30,61 +30,62 @@
   }
 
   ::selection {
-    background: rgba(91, 110, 247, 0.3);
-    color: #F4F4F8;
+    background: rgba(26, 68, 128, 0.15);
+    color: #0C1B2E;
   }
 
   ::-webkit-scrollbar {
     width: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #09090E;
+    background: #EEF3FA;
   }
   ::-webkit-scrollbar-thumb {
-    background: rgba(91, 110, 247, 0.4);
+    background: rgba(26, 68, 128, 0.25);
     border-radius: 3px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: rgba(91, 110, 247, 0.7);
+    background: rgba(26, 68, 128, 0.45);
   }
 }
 
 @layer utilities {
   .gradient-text {
-    background: linear-gradient(135deg, #5B6EF7 0%, #A259FF 60%, #F4F4F8 100%);
+    background: linear-gradient(135deg, #1A4480 0%, #2D6FA3 60%, #4A8FBF 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .gradient-text-blue {
-    background: linear-gradient(135deg, #5B6EF7 0%, #A259FF 100%);
+    background: linear-gradient(135deg, #1A4480 0%, #2D6FA3 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .glass {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(26, 68, 128, 0.1);
   }
 
   .glass-hover {
-    transition: background 0.3s ease, border-color 0.3s ease;
+    transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
   }
   .glass-hover:hover {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(91, 110, 247, 0.25);
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(26, 68, 128, 0.2);
+    box-shadow: 0 4px 16px rgba(26, 68, 128, 0.08);
   }
 
   .glow-accent {
-    box-shadow: 0 0 40px rgba(91, 110, 247, 0.25);
+    box-shadow: 0 4px 20px rgba(26, 68, 128, 0.18);
   }
 
   .glow-violet {
-    box-shadow: 0 0 40px rgba(162, 89, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(45, 111, 163, 0.15);
   }
 
   .section-padding {
@@ -126,7 +127,7 @@
     background: linear-gradient(
       90deg,
       transparent 0%,
-      rgba(255,255,255,0.05) 50%,
+      rgba(26, 68, 128, 0.06) 50%,
       transparent 100%
     );
     background-size: 200% 100%;
