@@ -2,10 +2,12 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { ArrowRight, TrendingUp, Users, Clock } from 'lucide-react'
 
+const spring = { type: 'spring' as const, stiffness: 80, damping: 20 }
+
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6, delay, ease: [0.21, 0.47, 0.32, 0.98] as [number, number, number, number] },
+  transition: { ...spring, delay },
 })
 
 const metrics = [
@@ -16,7 +18,7 @@ const metrics = [
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen overflow-hidden flex items-center bg-bg">
+    <section className="relative min-h-[100dvh] overflow-hidden flex items-center bg-bg">
       {/* Grid background */}
       <div
         className="absolute inset-0 bg-grid-pattern bg-grid opacity-100"
@@ -49,7 +51,7 @@ export default function Hero() {
               className="font-display text-4xl font-bold leading-[1.1] tracking-tight text-text-primary sm:text-5xl lg:text-6xl"
             >
               Превращаем{' '}
-              <span className="gradient-text">стоматологии</span>
+              <span className="text-accent">стоматологии</span>
               {' '}в бренды,{' '}
               <br className="hidden sm:block" />
               которые выбирают
@@ -103,7 +105,7 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, delay: 0.3, ease: [0.21, 0.47, 0.32, 0.98] as [number, number, number, number] }}
+            transition={{ ...spring, delay: 0.3 }}
             className="relative hidden lg:flex justify-center"
           >
             {/* Subtle glow behind card */}
@@ -149,7 +151,7 @@ export default function Hero() {
               transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
               className="absolute -top-4 -right-4 bg-white rounded-xl px-4 py-2.5 shadow-card border border-border"
             >
-              <p className="text-xs font-semibold text-text-primary">🦷 47 клиник доверяют</p>
+              <p className="text-xs font-semibold text-text-primary">47 клиник доверяют</p>
             </motion.div>
 
             {/* Small floating badge — bottom left */}

@@ -33,13 +33,13 @@ export default function Results() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_50%,rgba(255,255,255,0.04),transparent)]" />
 
       <div className="container-custom relative z-10">
-        <div className="flex flex-col items-center text-center mb-12">
+        <div className="mb-12">
           <motion.span
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-xs font-semibold uppercase tracking-widest text-white/60 mb-4"
+            transition={{ type: 'spring', stiffness: 80, damping: 20 }}
+            className="text-xs font-semibold uppercase tracking-widest text-white/60 mb-4 block"
           >
             Результаты
           </motion.span>
@@ -47,8 +47,8 @@ export default function Results() {
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="font-display text-3xl font-bold tracking-tighter text-white sm:text-4xl [text-wrap:balance]"
+            transition={{ type: 'spring', stiffness: 80, damping: 20, delay: 0.05 }}
+            className="font-display text-3xl font-bold tracking-tighter text-white sm:text-4xl max-w-2xl"
           >
             Цифры, которые говорят сами за себя
           </motion.h2>
@@ -58,7 +58,7 @@ export default function Results() {
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.15 }}
+          transition={{ type: 'spring', stiffness: 80, damping: 20, delay: 0.1 }}
           className="grid grid-cols-2 divide-x divide-y divide-white/10 rounded-2xl border border-white/10 lg:grid-cols-4 lg:divide-y-0 overflow-hidden"
         >
           {stats.map((stat, i) => (

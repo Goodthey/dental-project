@@ -38,13 +38,13 @@ export default function Process() {
     <section className="section-padding bg-bg">
       <div className="container-custom">
 
-        <div className="flex flex-col items-center text-center mb-14">
+        <div className="mb-14">
           <motion.span
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-xs font-semibold uppercase tracking-widest text-accent mb-4"
+            transition={{ type: 'spring', stiffness: 80, damping: 20 }}
+            className="text-xs font-semibold uppercase tracking-widest text-accent mb-4 block"
           >
             Процесс
           </motion.span>
@@ -52,8 +52,8 @@ export default function Process() {
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="font-display text-3xl font-bold tracking-tighter text-text-primary sm:text-4xl [text-wrap:balance]"
+            transition={{ type: 'spring', stiffness: 80, damping: 20, delay: 0.05 }}
+            className="font-display text-3xl font-bold tracking-tighter text-text-primary sm:text-4xl max-w-2xl"
           >
             Как мы работаем
           </motion.h2>
@@ -61,7 +61,7 @@ export default function Process() {
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.15 }}
+            transition={{ type: 'spring', stiffness: 80, damping: 20, delay: 0.1 }}
             className="mt-4 text-base text-text-secondary max-w-lg"
           >
             Прозрачный процесс без "мы работаем над этим". Вы знаете что происходит на каждом шаге.
@@ -75,7 +75,7 @@ export default function Process() {
               initial={{ opacity: 0, x: -24 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.5, delay: i * 0.07 }}
+              transition={{ type: 'spring', stiffness: 80, damping: 20, delay: i * 0.06 }}
               className="group flex items-start gap-5 rounded-xl border border-border bg-white p-5 shadow-sm hover:border-accent/25 hover:shadow-card transition-all duration-200"
             >
               {/* Number */}

@@ -33,7 +33,7 @@ export default function Positioning() {
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
+              transition={{ type: 'spring', stiffness: 80, damping: 20 }}
               className="inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent/8 px-3 py-1 mb-6"
             >
               <span className="h-1.5 w-1.5 rounded-full bg-accent" />
@@ -44,11 +44,11 @@ export default function Positioning() {
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
+              transition={{ type: 'spring', stiffness: 80, damping: 20, delay: 0.1 }}
               className="font-display text-3xl font-bold leading-tight tracking-tight text-text-primary sm:text-4xl"
             >
               Не просто агентство —{' '}
-              <span className="gradient-text-blue">маркетинг-отдел</span>{' '}
+              <span className="text-accent">маркетинг-отдел</span>{' '}
               для вашей клиники
             </motion.h2>
 
@@ -56,7 +56,7 @@ export default function Positioning() {
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.15 }}
+              transition={{ type: 'spring', stiffness: 80, damping: 20, delay: 0.15 }}
               className="mt-5 text-base text-text-secondary leading-relaxed"
             >
               Большинство агентств работают по шаблону: одинаковый сайт, одинаковая реклама, одинаковые результаты. Мы специализируемся только на стоматологиях — и это меняет всё.
@@ -67,7 +67,7 @@ export default function Positioning() {
               initial={{ opacity: 0, scaleX: 0 }}
               whileInView={{ opacity: 1, scaleX: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ type: 'spring', stiffness: 80, damping: 20, delay: 0.2 }}
               className="mt-8 mb-8 h-px bg-border origin-left"
             />
 
@@ -75,7 +75,7 @@ export default function Positioning() {
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.25 }}
+              transition={{ type: 'spring', stiffness: 80, damping: 20, delay: 0.25 }}
             >
               <Link
                 to="/contacts"
@@ -94,7 +94,7 @@ export default function Positioning() {
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
+                transition={{ type: 'spring', stiffness: 80, damping: 20, delay: i * 0.08 }}
                 className="rounded-xl border border-border bg-white p-5 shadow-sm hover:border-accent/25 hover:shadow-card transition-all duration-200"
               >
                 <div className="mb-3 flex h-8 w-8 items-center justify-center rounded-lg bg-accent/10">

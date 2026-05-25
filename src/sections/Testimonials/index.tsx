@@ -9,13 +9,13 @@ export default function Testimonials() {
     <section className="section-padding bg-bg-surface">
       <div className="container-custom">
 
-        <div className="flex flex-col items-center text-center mb-12">
+        <div className="mb-12">
           <motion.span
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-xs font-semibold uppercase tracking-widest text-accent mb-4"
+            transition={{ type: 'spring', stiffness: 80, damping: 20 }}
+            className="text-xs font-semibold uppercase tracking-widest text-accent mb-4 block"
           >
             Отзывы
           </motion.span>
@@ -23,8 +23,8 @@ export default function Testimonials() {
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="font-display text-3xl font-bold tracking-tighter text-text-primary sm:text-4xl [text-wrap:balance]"
+            transition={{ type: 'spring', stiffness: 80, damping: 20, delay: 0.05 }}
+            className="font-display text-3xl font-bold tracking-tighter text-text-primary sm:text-4xl max-w-2xl"
           >
             Что говорят владельцы клиник
           </motion.h2>
@@ -37,7 +37,7 @@ export default function Testimonials() {
             initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-40px' }}
-            transition={{ duration: 0.6 }}
+            transition={{ type: 'spring', stiffness: 80, damping: 20 }}
             className="lg:col-span-3 flex flex-col rounded-2xl border border-border bg-white p-8 shadow-card"
           >
             <div className="h-0.5 w-10 rounded-full bg-accent mb-6" />
@@ -67,7 +67,7 @@ export default function Testimonials() {
                 initial={{ opacity: 0, y: 28 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-40px' }}
-                transition={{ duration: 0.55, delay: (i + 1) * 0.1 }}
+                transition={{ type: 'spring', stiffness: 80, damping: 20, delay: (i + 1) * 0.08 }}
                 className="flex flex-col flex-1 rounded-2xl border border-border bg-white p-6 shadow-card"
               >
                 <Quote size={16} className="text-accent/25 mb-3" />

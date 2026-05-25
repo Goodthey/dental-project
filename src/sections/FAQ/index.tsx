@@ -45,7 +45,7 @@ export default function FAQ() {
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
+              transition={{ type: 'spring', stiffness: 80, damping: 20 }}
               className="text-xs font-semibold uppercase tracking-widest text-accent mb-4 block"
             >
               FAQ
@@ -54,7 +54,7 @@ export default function FAQ() {
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
+              transition={{ type: 'spring', stiffness: 80, damping: 20, delay: 0.05 }}
               className="font-display text-3xl font-bold tracking-tighter text-text-primary sm:text-4xl [text-wrap:balance]"
             >
               Частые вопросы
@@ -63,7 +63,7 @@ export default function FAQ() {
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.15 }}
+              transition={{ type: 'spring', stiffness: 80, damping: 20, delay: 0.1 }}
               className="mt-4 text-sm text-text-secondary leading-relaxed"
             >
               Не нашли ответ? Напишите нам — разберём вашу ситуацию индивидуально.
@@ -72,7 +72,7 @@ export default function FAQ() {
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ type: 'spring', stiffness: 80, damping: 20, delay: 0.12 }}
               className="mt-6"
             >
               <Link
@@ -92,7 +92,7 @@ export default function FAQ() {
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.05 }}
+                transition={{ type: 'spring', stiffness: 80, damping: 20, delay: i * 0.04 }}
                 className="rounded-xl border border-border bg-white overflow-hidden shadow-sm"
               >
                 <button

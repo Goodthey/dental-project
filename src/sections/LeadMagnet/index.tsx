@@ -35,7 +35,7 @@ export default function LeadMagnet() {
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
+              transition={{ type: 'spring', stiffness: 80, damping: 20 }}
               className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 mb-6"
             >
               <span className="h-1.5 w-1.5 rounded-full bg-white animate-pulse-slow" />
@@ -46,7 +46,7 @@ export default function LeadMagnet() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.55, delay: 0.1 }}
+              transition={{ type: 'spring', stiffness: 80, damping: 20, delay: 0.08 }}
               className="font-display text-3xl font-bold tracking-tighter text-white sm:text-4xl [text-wrap:balance]"
             >
               Получите бесплатный аудит за 24 часа
@@ -56,7 +56,7 @@ export default function LeadMagnet() {
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ type: 'spring', stiffness: 80, damping: 20, delay: 0.15 }}
               className="mt-4 text-base text-white/70"
             >
               Разберём ваш маркетинг и покажем, где вы теряете пациентов прямо сейчас.
@@ -66,7 +66,7 @@ export default function LeadMagnet() {
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.25 }}
+              transition={{ type: 'spring', stiffness: 80, damping: 20, delay: 0.18 }}
               className="mt-8 flex flex-col gap-3"
             >
               {perks.map((p) => (
@@ -85,7 +85,7 @@ export default function LeadMagnet() {
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.15 }}
+            transition={{ type: 'spring', stiffness: 80, damping: 20, delay: 0.1 }}
             className="rounded-2xl bg-white p-8 shadow-card sm:p-10"
           >
             {!sent ? (
@@ -125,7 +125,7 @@ export default function LeadMagnet() {
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4 }}
+                transition={{ type: 'spring', stiffness: 200, damping: 22 }}
                 className="flex flex-col items-center text-center py-8"
               >
                 <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-success/10">
