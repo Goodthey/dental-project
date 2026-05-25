@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { CheckCircle2 } from 'lucide-react'
+import MagneticButton from '@/components/shared/MagneticButton'
 
 const advantages = [
   {
@@ -77,12 +78,14 @@ export default function Positioning() {
               viewport={{ once: true }}
               transition={{ type: 'spring', stiffness: 80, damping: 20, delay: 0.25 }}
             >
-              <Link
-                to="/contacts"
-                className="inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-accent-hover hover:shadow-glow-accent active:scale-[0.98]"
-              >
-                Обсудить вашу клинику →
-              </Link>
+              <MagneticButton>
+                <Link
+                  to="/contacts"
+                  className="inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-accent-hover hover:shadow-glow-accent active:scale-[0.98]"
+                >
+                  Обсудить вашу клинику →
+                </Link>
+              </MagneticButton>
             </motion.div>
           </div>
 

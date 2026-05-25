@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import MagneticButton from '@/components/shared/MagneticButton'
 
 const navLinks = [
   { label: 'Услуги', to: '/services' },
@@ -61,12 +62,14 @@ export default function Header() {
 
           {/* CTA */}
           <div className="hidden items-center gap-3 md:flex">
-            <Link
-              to="/contacts"
-              className="rounded-md bg-accent px-4 py-2 text-sm font-medium text-white transition-all duration-200 hover:bg-accent-hover hover:shadow-glow-accent active:scale-[0.98]"
-            >
-              Получить аудит
-            </Link>
+            <MagneticButton strength={0.3}>
+              <Link
+                to="/contacts"
+                className="rounded-md bg-accent px-4 py-2 text-sm font-medium text-white transition-all duration-200 hover:bg-accent-hover hover:shadow-glow-accent active:scale-[0.98]"
+              >
+                Получить аудит
+              </Link>
+            </MagneticButton>
           </div>
 
           {/* Mobile burger */}

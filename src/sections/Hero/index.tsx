@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { ArrowRight, TrendingUp, Users, Clock } from 'lucide-react'
+import MagneticButton from '@/components/shared/MagneticButton'
 
 const spring = { type: 'spring' as const, stiffness: 80, damping: 20 }
 
@@ -67,19 +68,23 @@ export default function Hero() {
 
             {/* CTAs */}
             <motion.div {...fadeUp(0.3)} className="mt-10 flex flex-wrap items-center gap-4">
-              <Link
-                to="/contacts"
-                className="group inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-accent-hover hover:shadow-glow-accent active:scale-[0.98]"
-              >
-                Получить бесплатный аудит
-                <ArrowRight size={16} className="transition-transform duration-200 group-hover:translate-x-1" />
-              </Link>
-              <Link
-                to="/cases"
-                className="inline-flex items-center gap-2 rounded-lg border border-border px-6 py-3.5 text-sm font-semibold text-text-secondary transition-all duration-200 hover:border-accent/30 hover:text-text-primary"
-              >
-                Смотреть кейсы
-              </Link>
+              <MagneticButton>
+                <Link
+                  to="/contacts"
+                  className="group inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-accent-hover hover:shadow-glow-accent active:scale-[0.98]"
+                >
+                  Получить бесплатный аудит
+                  <ArrowRight size={16} className="transition-transform duration-200 group-hover:translate-x-1" />
+                </Link>
+              </MagneticButton>
+              <MagneticButton strength={0.25}>
+                <Link
+                  to="/cases"
+                  className="inline-flex items-center gap-2 rounded-lg border border-border px-6 py-3.5 text-sm font-semibold text-text-secondary transition-all duration-200 hover:border-accent/30 hover:text-text-primary"
+                >
+                  Смотреть кейсы
+                </Link>
+              </MagneticButton>
             </motion.div>
 
             {/* Social proof line */}
